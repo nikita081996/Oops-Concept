@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddUser">
+
+    <TextView
+        android:id="@+id/tname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="57dp"
+
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="107dp"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/taddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/tname"
+
+        android:layout_alignStart="@+id/tname"
+        android:layout_marginTop="170dp"
+        android:text="Address" />
+
+    <TextView
+        android:id="@+id/tmobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/tname"
+
+        android:layout_alignStart="@+id/tname"
+        android:layout_marginTop="236dp"
+        android:text="Mobile No" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tname"
+        android:layout_alignParentRight="true"
+
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="21dp"
+
+        android:layout_marginEnd="21dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Enter your Name" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/taddress"
+        android:layout_alignLeft="@+id/name"
+
+        android:layout_alignStart="@+id/name"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Enter your Address" />
+
+    <EditText
+        android:id="@+id/mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/name"
+
+        android:layout_alignStart="@+id/name"
+        android:layout_marginTop="215dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Enter Mobile No" />
+
+    <Button
+        android:id="@+id/adduser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="210dp"
+        android:layout_marginLeft="129dp"
+
+        android:layout_marginStart="129dp"
+        android:text="Add User" />
+</RelativeLayout>
