@@ -56,7 +56,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         holder.age.setText(""+ mBookList.get(position).getAge());
 
         Picasso.with(mContext).load(mBookList.get(position).getAvatar())
-          //      .placeholder(R.drawable.ic_launcher_foreground)
+                .placeholder(R.drawable.ic_launcher_foreground)
                 .noFade().resize(200, 200)
                 .into(holder.imageView, new Callback() {
                     @Override
