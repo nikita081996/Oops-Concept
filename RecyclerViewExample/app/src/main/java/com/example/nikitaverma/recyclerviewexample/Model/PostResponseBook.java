@@ -1,6 +1,4 @@
-package com.example.nikitaverma.recyclerviewexample.Model;
-
-import java.util.List;
+package com.example.nikitaverma.recyclerviewexample.model;
 
 /**
  * Response from POST request
@@ -16,50 +14,36 @@ public class PostResponseBook {
 
     private String job;
 
-    public String getId ()
-    {
+    public String getId() {
         return id;
     }
 
-    public void setId (String id)
-    {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getCreatedAt ()
-    {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt (String createdAt)
-    {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getName ()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName (String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getJob ()
-    {
+    public String getJob() {
         return job;
     }
 
-    public void setJob (String job)
-    {
+    public void setJob(String job) {
         this.job = job;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [id = "+id+", createdAt = "+createdAt+", name = "+name+", job = "+job+"]";
     }
 
 }

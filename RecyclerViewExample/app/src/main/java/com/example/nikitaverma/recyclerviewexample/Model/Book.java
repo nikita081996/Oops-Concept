@@ -1,5 +1,7 @@
-package com.example.nikitaverma.recyclerviewexample.Model;
+package com.example.nikitaverma.recyclerviewexample.model;
 
+
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
@@ -8,15 +10,20 @@ import java.util.List;
  */
 public class Book {
 
+    @SerializedName("total")
     private String total;
 
-    private String per_page;
+    @SerializedName("per_page")
+    private String perPage;
 
+    @SerializedName("page")
     private String page;
 
-    private List<Data> data;
+    @SerializedName("data")
+    private List<GetData> data;
 
-    private String total_pages;
+    @SerializedName("total_pages")
+    private String totalPages;
 
     public String getTotal ()
     {
@@ -28,14 +35,14 @@ public class Book {
         this.total = total;
     }
 
-    public String getPer_page ()
+    public String getPerPage ()
     {
-        return per_page;
+        return perPage;
     }
 
-    public void setPer_page (String per_page)
+    public void setPerPage(String perPage)
     {
-        this.per_page = per_page;
+        this.perPage = perPage;
     }
 
     public String getPage ()
@@ -48,31 +55,25 @@ public class Book {
         this.page = page;
     }
 
-    public List<Data> getData ()
+    public List<GetData> getData ()
     {
         return data;
     }
 
-    public void setData (List<Data> data)
+    public void setData (List<GetData> data)
     {
         this.data = data;
     }
 
 
-    public String getTotal_pages ()
+    public String getTotalPages()
     {
-        return total_pages;
+        return totalPages;
     }
 
-    public void setTotal_pages (String total_pages)
+    public void setTotalPages(String totalPages)
     {
-        this.total_pages = total_pages;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [total = "+total+", per_page = "+per_page+", page = "+page+", data = "+data+", total_pages = "+total_pages+"]";
+        this.totalPages = totalPages;
     }
 
 }

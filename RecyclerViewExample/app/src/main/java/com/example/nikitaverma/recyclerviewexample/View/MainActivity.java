@@ -1,5 +1,4 @@
-package com.example.nikitaverma.recyclerviewexample.View;
-
+package com.example.nikitaverma.recyclerviewexample.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +9,10 @@ import android.widget.Button;
 
 import com.example.nikitaverma.recyclerviewexample.R;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+/**
+ * StartActivity
+ */
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button mPostBtn;
     private Button mGetBtn;
@@ -20,13 +22,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        intilize();
-        setSupportActionBar(mToolbar);
+        initialize();
 
     }
 
-    private void intilize(){
+    /**
+     * intilalizaion of all views
+     */
+    private void initialize() {
         mToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
         mGetBtn = findViewById(R.id.get);
         mPostBtn = findViewById(R.id.post);
 
@@ -37,14 +43,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case  R.id.get:
-                Intent intent1 = new Intent(this,Get.class);
+        switch (view.getId()) {
+            case R.id.get:
+                Intent intent1 = new Intent(this, GetDataActivity.class);
                 startActivity(intent1);
                 break;
 
             case R.id.post:
-                Intent intent2 = new Intent(this,Post.class);
+                Intent intent2 = new Intent(this, PostDataActivity.class);
                 startActivity(intent2);
                 break;
 

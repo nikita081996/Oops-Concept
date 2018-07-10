@@ -1,6 +1,7 @@
-package com.example.nikitaverma.recyclerviewexample.Adapter;
+package com.example.nikitaverma.recyclerviewexample.adapter;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.nikitaverma.recyclerviewexample.Model.Data;
+import com.example.nikitaverma.recyclerviewexample.model.GetData;
 import com.example.nikitaverma.recyclerviewexample.R;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -20,33 +21,48 @@ import java.util.List;
  */
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder> {
 
-    private List<Data> bookList ;
-    private Context mContext;
+    private final List<GetData> mBookList;
+    private final Context mContext;
 
-    public BookAdapter(List<Data> bookList, Context context) {
-        this.bookList = bookList;
+    public BookAdapter(List<GetData> bookList, Context context) {
+        this.mBookList = bookList;
         this.mContext = context;
     }
 
+    /**
+     * Inflate xml file to java
+     * @param parent
+     * @param viewType
+     * @return
+     */
+    @NonNull
     @Override
-    public BookViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BookViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.book_list_row, parent, false);
 
         return new BookViewHolder(itemView);
     }
 
+    /**
+     * Bind each data to view
+     * @param holder
+     * @param position
+     */
     @Override
-    public void onBindViewHolder(final BookViewHolder holder, int position) {
-        holder.firstname.setText(bookList.get(position).getFirstname());
-        holder.lastname.setText(""+bookList.get(position).getLastname());
-        holder.age.setText(""+bookList.get(position).getAge());
+    public void onBindViewHolder(@NonNull final BookViewHolder holder, int position) {
+        holder.firstName.setText(mBookList.get(position).getFirstName());
+        holder.lastName.setText(""+ mBookList.get(position).getLastName());
+        holder.age.setText(""+ mBookList.get(position).getAge());
 
-        Picasso.with(mContext).load(bookList.get(position).getAvatar())
+        Picasso.with(mContext).load(mBookList.get(position).getAvatar())
+          //      .placeholder(R.drawable.ic_launcher_foreground)
                 .noFade().resize(200, 200)
                 .into(holder.imageView, new Callback() {
                     @Override
                     public void onError() {
+                      //  holder.imageView.setImageDrawable(ic_launcher_foreground);
+                        holder.progressBar.setVisibility(View.GONE);
                         // TODO Auto-generated method stub
 
                     }
@@ -60,24 +76,31 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
                 });
     }
 
+    /**
+     *
+     * @return size of listView
+     */
     @Override
     public int getItemCount() {
-        return bookList.size();
+        return mBookList.size();
     }
 
+    /**
+     * holder to each object in view
+     */
     public class BookViewHolder extends RecyclerView.ViewHolder {
-        public TextView firstname;
-        public TextView lastname;
-        public TextView age;
-        ImageView imageView;
-        ProgressBar progressBar;
+        private TextView firstName;
+        private TextView lastName;
+        private TextView age;
+        private ImageView imageView;
+        private ProgressBar progressBar;
 
-        public BookViewHolder(View view) {
+         BookViewHolder(View view) {
             super(view);
-            firstname = view.findViewById(R.id.firstname);
-            lastname = view.findViewById(R.id.lastname);
+            firstName = view.findViewById(R.id.first_name);
+            lastName = view.findViewById(R.id.last_name);
             age = view.findViewById(R.id.age);
-            imageView = view.findViewById(R.id.imageview);
+            imageView = view.findViewById(R.id.image_view);
             progressBar = view.findViewById(R.id.progressbar);
         }
     }

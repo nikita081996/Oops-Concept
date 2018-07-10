@@ -1,9 +1,9 @@
-package com.example.nikitaverma.recyclerviewexample.Model;
+package com.example.nikitaverma.recyclerviewexample.model;
 
 /**
  * Request data for POST
  */
-public class PostData {
+public class PostDataRequest {
 
     private String name;
 
@@ -27,12 +27,6 @@ public class PostData {
     public void setJob (String job)
     {
         this.job = job;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [name = "+name+", job = "+job+"]";
     }
 
 }

@@ -1,20 +1,20 @@
-package com.example.nikitaverma.recyclerviewexample.Model;
+package com.example.nikitaverma.recyclerviewexample.model;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
  * SubClass of Book class using GET method
  */
-public class Data {
+public class GetData {
 
     @SerializedName("id")
     private String age;
 
     @SerializedName("first_name")
-    private String firstname;
+    private String firstName;
 
     @SerializedName("last_name")
-    private String lastname;
+    private String lastName;
 
     @SerializedName("avatar")
     private String avatar;
@@ -29,24 +29,24 @@ public class Data {
         this.age = id;
     }
 
-    public String getFirstname ()
+    public String getFirstName()
     {
-        return firstname;
+        return firstName;
     }
 
-    public void setFirstname (String first_name)
+    public void setFirstName(String first_name)
     {
-        this.firstname = first_name;
+        this.firstName = first_name;
     }
 
-    public String getLastname ()
+    public String getLastName()
     {
-        return lastname;
+        return lastName;
     }
 
-    public void setLastname (String last_name)
+    public void setLastName(String last_name)
     {
-        this.lastname = last_name;
+        this.lastName = last_name;
     }
 
     public String getAvatar ()
@@ -59,9 +59,4 @@ public class Data {
         this.avatar = avatar;
     }
 
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [id = "+age+", first_name = "+firstname+", last_name = "+lastname+", avatar = "+avatar+"]";
-    }
 }

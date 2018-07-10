@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Recycler View Example</string>
+    <string name="post">post</string>
+    <string name="get">Get</string>
+    <string name="name">Name</string>
+    <string name="created_at">Created At</string>
+    <string name="id">Id</string>
+    <string name="on_failure_call_of_api">error with response code</string>
+    <string name="success_response">Getting</string>
+    <string name="job">Job</string>
+    <string name="send">send</string>
 </resources>

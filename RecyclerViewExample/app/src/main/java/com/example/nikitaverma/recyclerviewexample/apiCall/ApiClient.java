@@ -1,15 +1,15 @@
-package com.example.nikitaverma.recyclerviewexample.API;
+package com.example.nikitaverma.recyclerviewexample.apiCall;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Retrofit intilization
+ * Retrofit initialization
  */
 public class ApiClient {
 
-    public static String BASE_URL = "https://reqres.in/";
-    public  static Retrofit retrofit = null;
+    private static final String BASE_URL = "https://reqres.in/";
+    private static Retrofit retrofit = null;
 
     public static Retrofit getApiClient(){
         if(retrofit == null){
